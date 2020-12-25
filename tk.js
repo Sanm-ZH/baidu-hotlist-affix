@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        baidu hot list Affix
-// @namespace   Violentmonkey Scripts
+// @namespace   https://github.com/Sanm-ZH/baidu-hotlist-affix
 // @match       *://www.baidu.com/s?*
 // @grant       none
 // @version     1.0
