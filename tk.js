@@ -5,6 +5,7 @@
 // @grant       none
 // @version     1.0
 // @author      sanm-zh
+// @icon        https://www.baidu.com/img/baidu_85beaf5496f291521eb75ba38eacbd87.svg
 // @description 百度热榜固定
 // ==/UserScript==
 
