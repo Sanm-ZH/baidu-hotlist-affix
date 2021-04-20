@@ -3,7 +3,7 @@
 // @namespace   https://github.com/Sanm-ZH/baidu-hotlist-affix
 // @match       *://www.baidu.com/s?*
 // @grant       none
-// @version     1.0
+// @version     1.0.1
 // @author      sanm-zh
 // @icon        https://www.baidu.com/img/baidu_85beaf5496f291521eb75ba38eacbd87.svg
 // @description 百度热榜固定
