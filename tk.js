@@ -10,26 +10,36 @@
 // ==/UserScript==
 
 (function () {
-    var hotEle = document.getElementsByClassName('FYB_RD');
-    if (hotEle.length) {
-        var isHotList = hotEle[0].getElementsByClassName('cr-title')[0].title === '百度热榜';
-        if (isHotList) {
-            var top = getelementtopagetop(hotEle[0]);
-            window.onscroll = function () {
-                throttle(changeHotListStyle(hotEle[0], top), 1000);
-            }
-        }
-    } else {
-        return false;
-    }
+  // 调用dom处理
+  hotListDomHandel();
 })();
 
+// 获取热榜dom
+function hotListDomHandel() {
+  var hotEle = document.getElementsByClassName('FYB_RD');
+  if (hotEle.length) {
+      var isHotList = hotEle[0].getElementsByClassName('cr-title')[0].title === '百度热榜';
+      if (isHotList) {
+          var top = getelementtopagetop(hotEle[0]),
+              url = location.href;
+          window.onscroll = function () {
+              throttle(changeHotListStyle(hotEle[0], top, url), 1000);
+          }
+      }
+  } else {
+      return false;
+  }
+}
+
 // 固定热点列表样式
-function changeHotListStyle(hotEle, top) {
+function changeHotListStyle(hotEle, top, url) {
+    // url变化重新获取热榜dom
+    if(location.href !== url) {
+      hotListDomHandel();
+    }
     var scrollTop = document.documentElement.scrollTop;
     if (scrollTop > top - 70) {
-        hotEle.style.position = 'fixed';
-        hotEle.style.top = '80px';
+        hotEle.style = 'position: fixed;top: 80px;width: 368px';
     } else {
         hotEle.style = '';
     }
