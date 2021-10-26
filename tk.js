@@ -8,6 +8,7 @@
 // @author      sanm-zh
 // @icon        https://www.baidu.com/img/baidu_85beaf5496f291521eb75ba38eacbd87.svg
 // @description 百度热榜固定
+// @updateURL   https://raw.githubusercontent.com/Sanm-ZH/baidu-hotlist-affix/main/tk.js
 // ==/UserScript==
 
 (function () {
