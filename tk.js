@@ -4,18 +4,26 @@
 // @match       https://www.baidu.com/s?*
 // @match       https://zhidao.baidu.com/search?*
 // @grant       none
-// @version     1.2.0
+// @version     1.3.0
 // @author      sanm-zh
 // @icon        https://www.baidu.com/img/baidu_85beaf5496f291521eb75ba38eacbd87.svg
 // @description 百度热榜固定
 // ==/UserScript==
 
 (function () {
-    var reg = /(http|https):\/\/(www|zhidao).baidu.com\/(s|search)*/
-    if(reg.test(location.href)) {
-      // 调用dom处理
-      hotListDomHandel();
-    }
+    setTimeout(function() {
+      // 存在评论区域时，不进行定位
+      var remarkDom = document.querySelector('.xdp');
+      if(remarkDom) {
+        return false;
+      }
+      
+      var reg = /(http|https):\/\/(www|zhidao).baidu.com\/(s|search)*/
+      if(reg.test(location.href)) {
+        // 调用dom处理
+        hotListDomHandel();
+      }
+    }, 1500)
 })();
   
 // 获取热榜dom
